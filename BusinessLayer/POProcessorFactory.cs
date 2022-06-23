@@ -1,22 +1,11 @@
 ﻿using BusinessLayer.MandatoryProcessors;
 using BusinessLayer.MandatoryProcessors.Interfaces;
-using VideoAndBook.BusinessLayer.Models;
+using BusinessLayer.OptionalProcessors;
 
 namespace BusinessLayer
 {
     public class POProcessorFactory//: IPOProcessorFactory
     {
-        private readonly POProcessor _membershipProcessor;
-        private readonly POCreationProcessor _poCreationProcessor;
-        private readonly IObserver<PurchaseOrderModel> _deliveryCreationProcessor;
-
-        public POProcessorFactory(POProcessor membershipProcessor, POCreationProcessor poCreationProcessor, IObserver<PurchaseOrderModel> deliveryCreationProcessor)
-        {
-            _membershipProcessor = membershipProcessor;
-            _poCreationProcessor = poCreationProcessor;
-            _deliveryCreationProcessor = deliveryCreationProcessor;
-        }
-
         /// <summary>
         /// 
         /// </summary>
@@ -32,9 +21,10 @@ namespace BusinessLayer
 
         private IPOProcessor DefaultFlow()
         {
-            var defaultFlow = _membershipProcessor;
-            _poCreationProcessor.Subscribe(_deliveryCreationProcessor);
-            defaultFlow.SetNext(_poCreationProcessor);
+            var defaultFlow = new MembershipProcessor();
+            var poCreationProcessor = new POCreationProcessor();
+            poCreationProcessor.Subscribe(new DeliveryCreationProcessor());
+            defaultFlow.SetNext(poCreationProcessor);
             return defaultFlow;
         }
     }

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VideoAndBook.BusinessLayer.Models;
+﻿using VideoAndBook.BusinessLayer.Models;
 
 namespace BusinessLayer.OptionalProcessors
 {
-    internal class DeliveryCreationProcessor : IObserver<PurchaseOrderModel>
+    public class DeliveryCreationProcessor : IObserver<PurchaseOrderModel>
     {
         public void OnCompleted()
         {

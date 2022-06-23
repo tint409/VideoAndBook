@@ -21,7 +21,7 @@ namespace BusinessLayer
             });
 
             // If activate membership successfully, go next step, if not, stop
-            return createdPOID > 0 ? (NextProcessor?.Process(po) ?? 0) : 0;
+            return createdPOID > 0 ? (NextProcessor?.Process(po) ?? createdPOID) : 0;
         }
     }
 }
