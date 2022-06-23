@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs/VideoAndBook/DesignTimeBuild
+/.vs/VideoAndBook/v17
+/BusinessLayer/bin/Debug/net6.0
+/BusinessLayer/obj
+/VideoAndBook/bin/Debug/net6.0
+/VideoAndBook/obj
