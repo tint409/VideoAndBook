@@ -2,7 +2,7 @@
 
 namespace BusinessLayer.OptionalProcessors
 {
-    public class DeliveryCreationProcessor : IObserver<PurchaseOrderModel>
+    public class DeliveryCreationProcessor : IObserver<PurchaseOrderDTO>
     {
         public void OnCompleted()
         {
@@ -14,7 +14,7 @@ namespace BusinessLayer.OptionalProcessors
             // Do nothing, PO isn't created.
         }
 
-        public void OnNext(PurchaseOrderModel value)
+        public void OnNext(PurchaseOrderDTO value)
         {
             // Create Delivery if there is a physical items in the order
             

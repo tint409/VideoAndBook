@@ -4,10 +4,10 @@ namespace BusinessLayer.OptionalProcessors
 {
     internal class POObservationUnsubscriber: IDisposable
     {
-        private List<IObserver<PurchaseOrderModel>> _observers;
-        private IObserver<PurchaseOrderModel> _observer;
+        private List<IObserver<PurchaseOrderDTO>> _observers;
+        private IObserver<PurchaseOrderDTO> _observer;
 
-        public POObservationUnsubscriber(List<IObserver<PurchaseOrderModel>> observers, IObserver<PurchaseOrderModel> observer)
+        public POObservationUnsubscriber(List<IObserver<PurchaseOrderDTO>> observers, IObserver<PurchaseOrderDTO> observer)
         {
             _observers = observers;
             _observer = observer;

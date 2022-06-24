@@ -11,9 +11,9 @@ namespace BusinessLayer.MandatoryProcessors
     {
         protected POProcessor? NextProcessor { get; private set; }
 
-        public int Process(PurchaseOrderModel po) => Process(po, null);
+        public int Process(PurchaseOrderDTO po) => Process(po, null);
 
-        internal abstract int Process(PurchaseOrderModel po, params object[]? additionalParams);
+        internal abstract int Process(PurchaseOrderDTO po, params object[]? additionalParams);
 
         public void SetNext(POProcessor next)
         {

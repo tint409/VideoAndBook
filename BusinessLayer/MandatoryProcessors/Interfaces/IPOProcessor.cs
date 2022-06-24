@@ -4,6 +4,6 @@ namespace BusinessLayer.MandatoryProcessors.Interfaces
 {
     public interface IPOProcessor
     {
-        int Process(PurchaseOrderModel po);
+        int Process(PurchaseOrderDTO po);
     }
 }

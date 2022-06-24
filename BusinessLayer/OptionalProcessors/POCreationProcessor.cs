@@ -10,11 +10,11 @@ namespace BusinessLayer
     ///     If fail to process, dont roll back the PO, but can re-try the task later.
     ///     Observers are independent, and 1 observer fail doesn't affect other observer.
     /// </summary>
-    public partial class POCreationProcessor : IObservable<PurchaseOrderModel>
+    public partial class POCreationProcessor : IObservable<PurchaseOrderDTO>
     {
-        private List<IObserver<PurchaseOrderModel>> _observers = new();
+        private List<IObserver<PurchaseOrderDTO>> _observers = new();
 
-        public IDisposable Subscribe(IObserver<PurchaseOrderModel> observer)
+        public IDisposable Subscribe(IObserver<PurchaseOrderDTO> observer)
         {
             if (!_observers.Contains(observer))
             {

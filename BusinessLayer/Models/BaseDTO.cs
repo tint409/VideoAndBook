@@ -1,6 +1,6 @@
 ﻿namespace VideoAndBook.BusinessLayer.Models
 {
-    public class BaseModel
+    public class BaseDTO
     {
         public int Id { get; set; }
     }
